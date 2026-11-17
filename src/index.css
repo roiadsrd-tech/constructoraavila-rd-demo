@@ -1,0 +1,201 @@
+/* ==========================================================================
+   CONSTRUCTORA ÁVILA — ARCHITECTURAL DESIGN SYSTEM & STYLESHEET
+   ADN: Bespoke Monolith & Tonal Architectural Precision (contrast-hybrid)
+   Fonts: Instrument Serif (Display), Inter (Sans), JetBrains Mono (Tech)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #F3F2EE;
+  --bg-secondary: #EBE9E4;
+  --bg-dark: #121316;
+  --bg-dark-surface: #191B1F;
+  --bg-card: #FAF9F6;
+  
+  --text-dark: #121316;
+  --text-muted: #6B6B6B;
+  --text-light: #F3F2EE;
+  --text-light-muted: #A3A099;
+  
+  --accent: #A68B67;
+  --accent-hover: #8E7554;
+  --accent-soft: #D9D1C5;
+  --gold-accent: #C5B398;
+  
+  --border-hairline: rgba(20, 22, 25, 0.11);
+  --border-hairline-dark: rgba(243, 242, 238, 0.12);
+  --border-hairline-accent: rgba(166, 139, 103, 0.35);
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', "Courier New", monospace;
+  
+  --radius-sharp: 0px;
+}
+
+/* Zero horizontal overflow on root */
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+/* Editorial Typography */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Hairline borders */
+.border-b-hairline {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.border-t-hairline {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.border-hairline {
+  border: 1px solid var(--border-hairline);
+}
+
+.border-hairline-dark {
+  border: 1px solid var(--border-hairline-dark);
+}
+
+/* Architectural Button */
+.btn-monolith {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-dark);
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-monolith:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  background-color: transparent;
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(243, 242, 238, 0.4);
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(243, 242, 238, 0.12);
+  border-color: var(--text-light);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  background-color: transparent;
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--text-dark);
+  background-color: rgba(18, 19, 22, 0.04);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
