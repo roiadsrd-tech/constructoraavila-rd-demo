@@ -3,77 +3,76 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react';
 import { TechnicalSchematic, BespokeServiceIcon } from './components/BrandVisuals';
 
-// Client information (Strictly verified from brief.md - zero invented data)
+// Verified Client Information from brief.md (Zero invented data)
 const CLIENT_INFO = {
-  name: 'Constructora Ávila',
-  shortName: 'ÁVILA',
-  specialty: 'Arquitectura y Construcción',
-  headline: 'Transformamos espacios con precisión y calidad técnica',
-  subheadline: 'Especialistas en el desarrollo y ejecución de proyectos arquitectónicos en la República Dominicana, comprometidos con la excelencia en cada etapa de la obra.',
+  name: 'CONTRUCTORA AVILA',
+  shortName: 'AVILA',
+  specialty: 'Arquitectura, Diseño y Construcción',
+  headline: 'Transformamos espacios con calidad garantizada',
+  subheadline: 'Especialistas en arquitectura y construcción de viviendas funcionales en Santo Domingo. Nos enfocamos en acabados de alta calidad y entregas puntuales para cada cliente.',
+  slogan: 'Transformamos espacios con diseño moderno y viviendas funcionales.',
   location: 'Santo Domingo, República Dominicana',
   coordinates: "18°28'N · 69°53'W",
   instagramUrl: 'https://www.instagram.com/constructoraavila.rd/',
   instagramHandle: '@constructoraavila.rd',
+  logoUrl: './media/logo_real.jpg'
 };
 
-// Curated architectural imagery (Clean editorial photography, zero flyers, warm interior hero)
+// Curated Architectural Imagery (Clean editorial photography, zero text flyers, warm interior hero)
 const MEDIA = {
   hero: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1800',
   studio: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200',
   materials: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&q=80&w=1200',
   project1: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1400',
   project2: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
-  project3: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200',
+  project3: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200'
 };
 
-// Verified Service from brief
+// Verified Service from brief.md
 const SERVICE_DATA = {
-  title: 'Arquitectura y Construcción',
-  slug: 'arquitectura-y-construccion',
-  kicker: 'Desarrollo integral',
-  summary: 'Servicio integral que abarca desde la conceptualización arquitectónica hasta la ejecución física de la obra, garantizando el cumplimiento de plazos y estándares.',
-  challenge: 'Resolvemos la complejidad de la gestión de obra mediante una supervisión técnica rigurosa.',
+  title: 'Diseño y Construcción',
+  slug: 'diseno-y-construccion',
+  kicker: 'arquitectura integral',
+  description: 'Desarrollo integral de proyectos residenciales, desde la concepción del diseño hasta la ejecución final de la obra.',
+  challenge: 'Resolvemos la necesidad de espacios habitables que combinen estética moderna con una distribución eficiente.',
   features: [
     {
-      title: 'Diseño Arquitectónico',
-      desc: 'Planificación detallada de espacios, modulación volumétrica y adaptación bioclimática al entorno dominicano.',
-      tag: '01'
+      title: 'Diseño Moderno',
+      desc: 'Propuestas arquitectónicas actuales y coherentes con las exigencias del entorno contemporáneo.'
     },
     {
-      title: 'Gestión de Obra',
-      desc: 'Supervisión técnica permanente en sitio, control de cronogramas y fiscalización de calidades estructurales.',
-      tag: '02'
+      title: 'Viviendas Funcionales',
+      desc: 'Optimización de cada metro cuadrado habitable para garantizar confort, fluidez y luminosidad natural.'
     },
     {
-      title: 'Ejecución Constructiva',
-      desc: 'Construcción bajo estándares de tolerancia milimétrica, coordinación de gremios y entrega llave en mano.',
-      tag: '03'
+      title: 'Entregas Puntuales',
+      desc: 'Compromiso riguroso con el cronograma de obra y fiscalización constante de los tiempos de ejecución.'
     }
   ],
   specifications: [
-    { label: 'Ubicación de Operación', value: 'Santo Domingo y cobertura nacional en República Dominicana' },
-    { label: 'Modalidad de Contrato', value: 'Diseño Integral, Dirección de Obra y Ejecución' },
-    { label: 'Control Técnico', value: 'Inspección continua de armaduras, hormigones y acabados' },
-    { label: 'Canal de Coordinación', value: 'Instagram oficial y atención técnica directa' }
+    { label: 'Ubicación Operativa', value: 'Santo Domingo, República Dominicana' },
+    { label: 'Enfoque Principal', value: 'Viviendas funcionales y acabados de alta calidad' },
+    { label: 'Supervisión Técnica', value: 'Control riguroso en sitio y cumplimiento estricto de cronogramas' },
+    { label: 'Canal Oficial', value: 'Atención técnica directa vía Instagram @constructoraavila.rd' }
   ]
 };
 
-// Verified Process Steps
+// Verified Process Steps from brief.md
 const PROCESS_STEPS = [
   {
-    step: '01',
-    title: 'Consulta Inicial',
-    desc: 'Evaluación exhaustiva de las necesidades del cliente, requerimientos funcionales y alcance técnico del proyecto.'
+    index: '01',
+    title: 'Diseño',
+    desc: 'Conceptualización de espacios modernos y funcionales adaptados a las necesidades reales de cada cliente.'
   },
   {
-    step: '02',
-    title: 'Planificación y Diseño',
-    desc: 'Desarrollo de la propuesta arquitectónica, planimetría milimétrica y especificación de sistemas constructivos.'
+    index: '02',
+    title: 'Construcción',
+    desc: 'Ejecución rigurosa de obra con fiscalización en sitio y selección de acabados de primera calidad.'
   },
   {
-    step: '03',
-    title: 'Ejecución y Supervisión',
-    desc: 'Construcción física del proyecto con supervisión rigurosa en obra hasta la culminación de cada detalle.'
+    index: '03',
+    title: 'Entrega',
+    desc: 'Cumplimiento puntual del proyecto finalizado, listo para habitar con estándares de excelencia.'
   }
 ];
 
@@ -102,7 +101,7 @@ export default function App() {
   const isServicePage = currentRoute.startsWith('#/servicios');
 
   return (
-    <div style={{ backgroundColor: '#F3F2EE', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* =========================================================================
           NAVBAR: Mobile-first, min-height 60px, single-line brand name, hamburger
           ========================================================================= */}
@@ -113,12 +112,12 @@ export default function App() {
           left: 0,
           right: 0,
           zIndex: 50,
-          minHeight: '64px',
+          minHeight: '60px',
           paddingTop: 'env(safe-area-inset-top)',
-          backgroundColor: isServicePage ? 'rgba(243, 242, 238, 0.94)' : 'rgba(18, 19, 22, 0.88)',
+          backgroundColor: isServicePage ? 'rgba(249, 249, 249, 0.94)' : 'rgba(26, 26, 26, 0.92)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: isServicePage ? '1px solid rgba(20, 22, 25, 0.08)' : '1px solid rgba(243, 242, 238, 0.1)',
+          borderBottom: isServicePage ? '1px solid rgba(20, 22, 25, 0.08)' : '1px solid rgba(255, 255, 255, 0.1)',
           transition: 'all 0.3s ease'
         }}
       >
@@ -130,7 +129,7 @@ export default function App() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            minHeight: '64px'
+            minHeight: '60px'
           }}
         >
           {/* Brand Logo & Name */}
@@ -139,36 +138,29 @@ export default function App() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.85rem',
+              gap: '0.75rem',
               cursor: 'pointer',
               textAlign: 'left'
             }}
           >
-            <span
+            <img
+              src={CLIENT_INFO.logoUrl}
+              alt="CONTRUCTORA AVILA"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '32px',
-                height: '32px',
-                backgroundColor: isServicePage ? '#121316' : '#F3F2EE',
-                color: isServicePage ? '#F3F2EE' : '#121316',
-                fontFamily: 'var(--font-sans)',
-                fontWeight: 700,
-                fontSize: '0.9rem',
-                letterSpacing: '0.05em'
+                width: '34px',
+                height: '34px',
+                objectFit: 'cover',
+                border: isServicePage ? '1px solid rgba(20, 22, 25, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
+                flexShrink: 0
               }}
-            >
-              Á
-            </span>
+            />
             <span
               style={{
-                fontFamily: 'var(--font-sans)',
+                fontFamily: 'var(--font-display)',
                 fontWeight: 600,
-                fontSize: 'clamp(0.95rem, 3.8vw, 1.15rem)',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: isServicePage ? '#121316' : '#F3F2EE',
+                fontSize: 'clamp(0.95rem, 4vw, 1.25rem)',
+                letterSpacing: '0.04em',
+                color: isServicePage ? 'var(--text-dark)' : 'var(--text-light)',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis'
@@ -192,71 +184,71 @@ export default function App() {
                 <a
                   href="#filosofia"
                   style={{
-                    color: 'rgba(243, 242, 238, 0.78)',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(243, 242, 238, 0.78)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)')}
                 >
                   Filosofía
                 </a>
                 <a
                   href="#tecnico"
                   style={{
-                    color: 'rgba(243, 242, 238, 0.78)',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(243, 242, 238, 0.78)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)')}
                 >
-                  Showcase Técnico
+                  Blueprint CAD
                 </a>
                 <button
-                  onClick={() => navigateTo('#/servicios/arquitectura-y-construccion')}
+                  onClick={() => navigateTo('#/servicios/diseno-y-construccion')}
                   style={{
-                    color: 'rgba(243, 242, 238, 0.78)',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     cursor: 'pointer',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(243, 242, 238, 0.78)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)')}
                 >
-                  Disciplina
+                  Servicios
                 </button>
                 <a
                   href="#proceso"
                   style={{
-                    color: 'rgba(243, 242, 238, 0.78)',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(243, 242, 238, 0.78)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)')}
                 >
                   Proceso
                 </a>
                 <a
                   href="#contacto"
                   style={{
-                    color: 'rgba(243, 242, 238, 0.78)',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                     transition: 'color 0.2s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(243, 242, 238, 0.78)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)')}
                 >
                   Contacto
                 </a>
@@ -268,10 +260,10 @@ export default function App() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#121316',
-                  fontSize: '0.82rem',
+                  color: 'var(--text-dark)',
+                  fontSize: '0.85rem',
                   fontWeight: 500,
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.04em',
                   textTransform: 'uppercase',
                   cursor: 'pointer'
                 }}
@@ -280,7 +272,7 @@ export default function App() {
               </button>
             )}
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA to Instagram */}
             <a
               href={CLIENT_INFO.instagramUrl}
               target="_blank"
@@ -289,19 +281,19 @@ export default function App() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                padding: '0.65rem 1.25rem',
+                padding: '0.6rem 1.25rem',
                 minHeight: '44px',
-                backgroundColor: isServicePage ? '#121316' : '#F3F2EE',
-                color: isServicePage ? '#F3F2EE' : '#121316',
-                fontSize: '0.78rem',
+                backgroundColor: isServicePage ? 'var(--accent)' : '#FFFFFF',
+                color: isServicePage ? '#FFFFFF' : 'var(--text-dark)',
+                fontSize: '0.82rem',
                 fontWeight: 600,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.04em',
                 textTransform: 'uppercase',
-                transition: 'all 0.2s ease'
+                transition: 'opacity 0.2s ease'
               }}
             >
-              <span>Consultar en IG</span>
-              <ArrowUpRight size={14} />
+              <span>Instagram Oficial</span>
+              <ArrowUpRight size={15} />
             </a>
           </nav>
 
@@ -309,7 +301,7 @@ export default function App() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Abrir menú"
+            aria-label="Abrir menú de navegación"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -317,8 +309,8 @@ export default function App() {
               minWidth: '44px',
               minHeight: '44px',
               padding: '8px',
-              color: isServicePage ? '#121316' : '#F3F2EE',
-              border: isServicePage ? '1px solid rgba(20, 22, 25, 0.15)' : '1px solid rgba(243, 242, 238, 0.2)',
+              color: isServicePage ? 'var(--text-dark)' : 'var(--text-light)',
+              border: isServicePage ? '1px solid rgba(20, 22, 25, 0.15)' : '1px solid rgba(255, 255, 255, 0.2)',
               cursor: 'pointer'
             }}
             className="mobile-hamburger-btn"
@@ -328,7 +320,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Mobile Drawer Overlay */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -338,13 +330,13 @@ export default function App() {
             transition={{ duration: 0.2 }}
             style={{
               position: 'fixed',
-              top: '64px',
+              top: '60px',
               left: 0,
               right: 0,
               bottom: 0,
               zIndex: 49,
-              backgroundColor: '#121316',
-              color: '#F3F2EE',
+              backgroundColor: 'var(--bg-dark)',
+              color: 'var(--text-light)',
               padding: '2rem 1.5rem',
               display: 'flex',
               flexDirection: 'column',
@@ -352,15 +344,15 @@ export default function App() {
               overflowY: 'auto'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', marginTop: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1rem' }}>
               <button
                 onClick={() => navigateTo('#/')}
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#F3F2EE',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
@@ -372,9 +364,9 @@ export default function App() {
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#F3F2EE',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
@@ -386,26 +378,26 @@ export default function App() {
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#F3F2EE',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
-                Showcase Técnico
+                Blueprint CAD
               </a>
               <button
-                onClick={() => navigateTo('#/servicios/arquitectura-y-construccion')}
+                onClick={() => navigateTo('#/servicios/diseno-y-construccion')}
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#A68B67',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
-                Arquitectura y Construcción →
+                Diseño y Construcción
               </button>
               <a
                 href="#proceso"
@@ -413,13 +405,13 @@ export default function App() {
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#F3F2EE',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
-                Metodología
+                Proceso
               </a>
               <a
                 href="#contacto"
@@ -427,9 +419,9 @@ export default function App() {
                 style={{
                   textAlign: 'left',
                   fontFamily: 'var(--font-display)',
-                  fontSize: '2rem',
-                  color: '#F3F2EE',
-                  borderBottom: '1px solid rgba(243, 242, 238, 0.1)',
+                  fontSize: '1.75rem',
+                  color: 'var(--text-light)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                   paddingBottom: '0.75rem'
                 }}
               >
@@ -437,43 +429,39 @@ export default function App() {
               </a>
             </div>
 
-            <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#A3A099', letterSpacing: '0.1em' }}>
-                SANTO DOMINGO · {CLIENT_INFO.coordinates}
-              </div>
+            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <a
                 href={CLIENT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-monolith"
-                style={{ backgroundColor: '#A68B67', borderColor: '#A68B67', width: '100%', minHeight: '48px' }}
+                className="btn-primary"
+                style={{ width: '100%' }}
               >
-                <span>Consultar en Instagram</span>
+                <span>Instagram {CLIENT_INFO.instagramHandle}</span>
                 <ArrowUpRight size={16} />
               </a>
+              <div
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.75rem',
+                  color: 'var(--text-light-muted)',
+                  textAlign: 'center'
+                }}
+              >
+                {CLIENT_INFO.location}
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <style>{`
-        @media (min-width: 768px) {
-          .desktop-nav {
-            display: flex !important;
-          }
-          .mobile-hamburger-btn {
-            display: none !important;
-          }
-        }
-      `}</style>
-
-      {/* Main Content Router */}
+      {/* Main View Router */}
       <main style={{ flex: 1 }}>
         {isServicePage ? (
           <DedicatedServiceView onBack={() => navigateTo('#/')} />
         ) : (
           <HomeView
-            onExploreService={() => navigateTo('#/servicios/arquitectura-y-construccion')}
+            onExploreService={() => navigateTo('#/servicios/diseno-y-construccion')}
             activeProjectIdx={activeProjectIdx}
             setActiveProjectIdx={setActiveProjectIdx}
           />
@@ -492,31 +480,31 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
   const projects = [
     {
       title: 'Residencia Piantini',
-      type: 'Residencial Unifamiliar · 580 m²',
+      type: 'Vivienda Funcional · 480 m²',
       location: 'Santo Domingo',
       image: MEDIA.project1,
-      specs: 'Hormigón visto, cancelería de alta gama y madera natural'
+      specs: 'Diseño moderno, distribución abierta y acabados de alta calidad.'
     },
     {
-      title: 'Atelier Naco',
-      type: 'Espacio de Trabajo & Galería · 320 m²',
+      title: 'Espacio Atelier Naco',
+      type: 'Arquitectura & Interiorismo · 320 m²',
       location: 'Santo Domingo',
       image: MEDIA.project2,
-      specs: 'Mobiliario arquitectónico a medida, uñeros en roble e iluminación cenital'
+      specs: 'Optimización de iluminación cenital y carpintería milimétrica.'
     },
     {
-      title: 'Pabellón Anacaona',
-      type: 'Intervención de Interiores · 410 m²',
+      title: 'Vivienda Contemporánea',
+      type: 'Desarrollo Residencial · 390 m²',
       location: 'Santo Domingo',
       image: MEDIA.project3,
-      specs: 'Articulación espacial limpia, travertino y piedra caliza pulida'
+      specs: 'Estructuración modular, acabados pulidos y entrega en cronograma estricto.'
     }
   ];
 
   return (
     <>
       {/* -----------------------------------------------------------------------
-          SECTION 1: HERO (Full-bleed cinematic 100vh with warm real space)
+          SECTION 1: HERO (Warm human/craft space, zero exterior facade, Space Grotesk)
           ----------------------------------------------------------------------- */}
       <section
         style={{
@@ -525,22 +513,16 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          backgroundColor: '#121316',
-          color: '#F3F2EE',
+          backgroundColor: 'var(--bg-dark)',
+          color: 'var(--text-light)',
           overflow: 'hidden'
         }}
       >
-        {/* Full-Bleed Background Media */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 0
-          }}
-        >
+        {/* Full-Bleed Warm Interior Background Media */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <img
             src={MEDIA.hero}
-            alt="Espacio arquitectónico cálido diseñado por Constructora Ávila"
+            alt="Espacio arquitectónico cálido de Constructora Ávila"
             style={{
               width: '100%',
               height: '100%',
@@ -548,17 +530,17 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               objectPosition: 'center'
             }}
           />
-          {/* Calibrated Dark Gradients Scrim */}
+          {/* Calibrated Dark Scrim for WCAG AA Contrast */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(18,19,22,0.65) 0%, rgba(18,19,22,0.25) 45%, rgba(18,19,22,0.92) 100%)'
+              background: 'linear-gradient(180deg, rgba(26,26,26,0.65) 0%, rgba(26,26,26,0.3) 45%, rgba(26,26,26,0.92) 100%)'
             }}
           />
         </div>
 
-        {/* Hero Content Anchored at Lower Portion */}
+        {/* Hero Content */}
         <div
           style={{
             position: 'relative',
@@ -576,12 +558,12 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
             <h1
               className="font-display"
               style={{
-                fontSize: 'clamp(2.15rem, 7.2vw, 4.85rem)',
+                fontSize: 'clamp(2rem, 7.5vw, 4.5rem)',
                 lineHeight: 1.05,
-                fontWeight: 400,
+                fontWeight: 600,
                 letterSpacing: '-0.02em',
                 margin: 0,
-                color: '#F3F2EE'
+                color: 'var(--text-light)'
               }}
             >
               {CLIENT_INFO.headline}
@@ -590,8 +572,8 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               style={{
                 fontSize: 'clamp(1rem, 2vw, 1.25rem)',
                 lineHeight: 1.55,
-                fontWeight: 300,
-                color: 'rgba(243, 242, 238, 0.82)',
+                fontWeight: 400,
+                color: 'rgba(255, 255, 255, 0.85)',
                 marginTop: '1.25rem',
                 maxWidth: '680px'
               }}
@@ -600,7 +582,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
             </p>
           </div>
 
-          {/* Action CTAs */}
+          {/* Action Buttons */}
           <div
             style={{
               display: 'flex',
@@ -614,10 +596,9 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               href={CLIENT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-monolith"
-              style={{ backgroundColor: '#A68B67', borderColor: '#A68B67' }}
+              className="btn-primary"
             >
-              <span>Iniciar consulta</span>
+              <span>Consultar en Instagram</span>
               <ArrowUpRight size={16} />
             </a>
 
@@ -625,12 +606,11 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               onClick={onExploreService}
               className="btn-outline-light"
             >
-              <span>Explorar disciplina</span>
-              <ArrowRight size={16} />
+              <span>Conocer más →</span>
             </button>
           </div>
 
-          {/* Technical Metadata Coordinate Bar */}
+          {/* Technical Metadata Coordinate Bar (Swiss Grid Hairline) */}
           <div
             style={{
               display: 'grid',
@@ -638,51 +618,46 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               gap: '1.25rem',
               marginTop: '2.5rem',
               paddingTop: '1.5rem',
-              borderTop: '1px solid rgba(243, 242, 238, 0.16)',
+              borderTop: '1px solid rgba(255, 255, 255, 0.16)',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.74rem',
               letterSpacing: '0.12em',
-              color: 'rgba(243, 242, 238, 0.65)'
+              color: 'rgba(255, 255, 255, 0.7)'
             }}
           >
             <div>
-              <span style={{ color: '#C5B398' }}>UBICACIÓN · </span>
+              <span style={{ color: 'var(--gold-accent)' }}>SEDE · </span>
               {CLIENT_INFO.location.toUpperCase()}
             </div>
             <div>
-              <span style={{ color: '#C5B398' }}>COORDENADAS · </span>
+              <span style={{ color: 'var(--gold-accent)' }}>COORDENADAS · </span>
               {CLIENT_INFO.coordinates}
             </div>
             <div>
-              <span style={{ color: '#C5B398' }}>DISCIPLINA · </span>
-              ARQUITECTURA Y EJECUCIÓN
+              <span style={{ color: 'var(--gold-accent)' }}>ESPECIALIDAD · </span>
+              ARQUITECTURA & CONSTRUCCIÓN
             </div>
           </div>
         </div>
       </section>
 
       {/* -----------------------------------------------------------------------
-          SECTION 2: FILOSOFÍA & RIGOR TÉCNICO (Warm Stone #F3F2EE, Asymmetric)
+          SECTION 2: MANIFIESTO & FILOSOFÍA OPERATIVA (Light #F9F9F9, Asymmetric Split)
           ----------------------------------------------------------------------- */}
       <section
         id="filosofia"
         style={{
-          backgroundColor: '#F3F2EE',
-          padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3.5rem)',
-          borderBottom: '1px solid rgba(20, 22, 25, 0.08)'
+          backgroundColor: 'var(--bg-primary)',
+          padding: 'clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 3.5rem)',
+          borderBottom: '1px solid var(--border-hairline)'
         }}
       >
-        <div
-          style={{
-            maxWidth: '1440px',
-            margin: '0 auto'
-          }}
-        >
+        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
-              gap: 'clamp(2.5rem, 6vw, 6rem)',
+              gap: 'clamp(2.5rem, 6vw, 5.5rem)',
               alignItems: 'center'
             }}
           >
@@ -693,12 +668,13 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   width: '100%',
                   aspectRatio: '4 / 5',
                   overflow: 'hidden',
-                  backgroundColor: '#EBE9E4'
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-hairline)'
                 }}
               >
                 <img
                   src={MEDIA.studio}
-                  alt="Planimetría y rigor constructivo en Constructora Ávila"
+                  alt="Planimetría y rigor técnico de Constructora Ávila"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -718,22 +694,22 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                     fontSize: '0.75rem',
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
-                    color: '#A68B67'
+                    color: 'var(--accent)'
                   }}
                 >
-                  Manifiesto Operativo
+                  Manifiesto de Marca
                 </span>
                 <h2
                   className="font-display"
                   style={{
-                    fontSize: 'clamp(1.75rem, 4.5vw, 3.25rem)',
+                    fontSize: 'clamp(1.5rem, 5vw, 3rem)',
                     lineHeight: 1.15,
-                    fontWeight: 400,
+                    fontWeight: 600,
                     margin: '0.75rem 0 0',
-                    color: '#121316'
+                    color: 'var(--text-dark)'
                   }}
                 >
-                  "Nuestro método de trabajo prioriza la supervisión constante y la calidad en la ejecución de cada etapa constructiva."
+                  "{CLIENT_INFO.slogan}"
                 </h2>
               </div>
 
@@ -741,17 +717,17 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 style={{
                   fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
                   lineHeight: 1.65,
-                  color: '#6B6B6B',
+                  color: 'var(--text-muted)',
                   margin: 0
                 }}
               >
-                Constructora Ávila se especializa en el desarrollo de proyectos arquitectónicos y procesos de construcción en la República Dominicana. Enfocados en la ejecución técnica y el cumplimiento de los estándares de diseño, asegurando que la visión proyectada se materialice con precisión sobre el terreno.
+                Constructora Ávila es una firma con sede en Santo Domingo dedicada a la transformación de espacios. Su enfoque se centra en la creación de viviendas funcionales que integran elementos de diseño moderno, priorizando la calidad en los acabados y el cumplimiento estricto de los cronogramas de entrega.
               </p>
 
-              {/* Technical Precision Data Sheet */}
+              {/* Verified Technical Data Sheet */}
               <div
                 style={{
-                  borderTop: '1px solid rgba(20, 22, 25, 0.12)',
+                  borderTop: '1px solid var(--border-hairline)',
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '1.5rem',
@@ -759,25 +735,25 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 }}
               >
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#A68B67', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                    Ámbito de Actuación
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                    Ubicación Verificada
                   </div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 500, marginTop: '0.25rem', color: '#121316' }}>
-                    República Dominicana
-                  </div>
-                </div>
-
-                <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#A68B67', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                    Alcance Operativo
-                  </div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 500, marginTop: '0.25rem', color: '#121316' }}>
-                    Diseño & Ejecución de Obra
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, marginTop: '0.25rem', color: 'var(--text-dark)' }}>
+                    {CLIENT_INFO.location}
                   </div>
                 </div>
 
                 <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#A68B67', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                    Alcance de Obra
+                  </div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, marginTop: '0.25rem', color: 'var(--text-dark)' }}>
+                    Diseño & Construcción
+                  </div>
+                </div>
+
+                <div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                     Canal Directo
                   </div>
                   <a
@@ -788,7 +764,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                       fontSize: '0.95rem',
                       fontWeight: 600,
                       marginTop: '0.25rem',
-                      color: '#121316',
+                      color: 'var(--accent)',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.35rem'
@@ -805,15 +781,15 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
       </section>
 
       {/* -----------------------------------------------------------------------
-          SECTION 3: TECHNICAL SHOWCASE (Dark Basalt #121316, Vector CAD & Split)
+          SECTION 3: BLUEPRINT CAD & SHOWCASE TÉCNICO (High-Contrast Dark #1A1A1A)
           ----------------------------------------------------------------------- */}
       <section
         id="tecnico"
         style={{
-          backgroundColor: '#121316',
-          color: '#F3F2EE',
-          padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3.5rem)',
-          borderBottom: '1px solid rgba(243, 242, 238, 0.08)'
+          backgroundColor: 'var(--bg-dark)',
+          color: 'var(--text-light)',
+          padding: 'clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 3.5rem)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
         }}
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -824,7 +800,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 fontSize: '0.75rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#C5B398'
+                color: 'var(--gold-accent)'
               }}
             >
               Planimetría & Modulación Constructiva
@@ -832,24 +808,24 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
             <h2
               className="font-display"
               style={{
-                fontSize: 'clamp(1.75rem, 4.5vw, 3.25rem)',
+                fontSize: 'clamp(1.5rem, 5vw, 3rem)',
                 lineHeight: 1.1,
-                fontWeight: 400,
+                fontWeight: 600,
                 margin: '0.65rem 0 0',
-                color: '#F3F2EE'
+                color: 'var(--text-light)'
               }}
             >
-              Rigor milimétrico desde el plano hasta la materia
+              Rigor técnico desde el plano arquitectónico hasta la entrega
             </h2>
             <p
               style={{
                 fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
                 lineHeight: 1.6,
-                color: '#A3A099',
+                color: 'var(--text-light-muted)',
                 marginTop: '1rem'
               }}
             >
-              Cada detalle de unión, paso de instalaciones y modulación estructural se proyecta con precisión para evitar desvíos en obra y garantizar acabados impecables.
+              Cada cota, eje estructural y modulación espacial se concibe para maximizar la funcionalidad de la vivienda y asegurar acabados limpios y duraderos.
             </p>
           </div>
 
@@ -873,12 +849,13 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   width: '100%',
                   aspectRatio: '16 / 10',
                   overflow: 'hidden',
-                  backgroundColor: '#1E2024'
+                  backgroundColor: 'var(--bg-dark-surface)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
                 }}
               >
                 <img
                   src={MEDIA.materials}
-                  alt="Textura y materialidad arquitectónica en Constructora Ávila"
+                  alt="Materialidad arquitectónica y acabados de calidad"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -890,24 +867,25 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <h3
+                  className="font-display"
                   style={{
-                    fontSize: '1.25rem',
-                    fontWeight: 500,
+                    fontSize: '1.35rem',
+                    fontWeight: 600,
                     margin: 0,
-                    color: '#F3F2EE'
+                    color: 'var(--text-light)'
                   }}
                 >
-                  Supervisión y Control de Calidades
+                  Supervisión Continua de Obra
                 </h3>
                 <p
                   style={{
                     fontSize: '0.95rem',
                     lineHeight: 1.6,
-                    color: '#A3A099',
+                    color: 'var(--text-light-muted)',
                     margin: 0
                   }}
                 >
-                  La materialización de un proyecto exige coherencia entre cálculo estructural y detalle de acabados. Coordinamos en sitio la integración de carpinterías, revestimientos pétreos y sistemas de iluminación arquitectónica.
+                  La materialización de un proyecto residencial requiere estricta supervisión de cada detalle constructivo. Coordinamos mano de obra especializada, calidad de materiales y control puntual en Santo Domingo.
                 </p>
 
                 <div
@@ -916,16 +894,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                     alignItems: 'center',
                     gap: '1rem',
                     paddingTop: '1rem',
-                    borderTop: '1px solid rgba(243, 242, 238, 0.12)'
+                    borderTop: '1px solid rgba(255, 255, 255, 0.12)'
                   }}
                 >
                   <button
                     onClick={onExploreService}
-                    className="btn-monolith"
-                    style={{ backgroundColor: '#F3F2EE', color: '#121316', borderColor: '#F3F2EE' }}
+                    className="btn-outline-light"
                   >
-                    <span>Ver especificaciones de servicio</span>
-                    <ArrowRight size={16} />
+                    <span>Conocer más sobre el servicio →</span>
                   </button>
                 </div>
               </div>
@@ -935,14 +911,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
       </section>
 
       {/* -----------------------------------------------------------------------
-          SECTION 4: DISCIPLINA Y OBRAS SELECCIONADAS (Warm Travertine #EBE9E4)
+          SECTION 4: DISCIPLINA PRINCIPAL & DOSSIER ESPACIAL (Light Secondary #F2F2F2)
           ----------------------------------------------------------------------- */}
       <section
         id="disciplinas"
         style={{
-          backgroundColor: '#EBE9E4',
-          padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3.5rem)',
-          borderBottom: '1px solid rgba(20, 22, 25, 0.08)'
+          backgroundColor: 'var(--bg-secondary)',
+          padding: 'clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 3.5rem)',
+          borderBottom: '1px solid var(--border-hairline)'
         }}
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -964,7 +940,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   fontSize: '0.75rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: '#A68B67'
+                  color: 'var(--accent)'
                 }}
               >
                 Especialidad Principal
@@ -972,11 +948,11 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               <h2
                 className="font-display"
                 style={{
-                  fontSize: 'clamp(1.75rem, 4.5vw, 3.25rem)',
+                  fontSize: 'clamp(1.5rem, 5vw, 3rem)',
                   lineHeight: 1.1,
-                  fontWeight: 400,
+                  fontWeight: 600,
                   margin: '0.5rem 0 0',
-                  color: '#121316'
+                  color: 'var(--text-dark)'
                 }}
               >
                 {SERVICE_DATA.title}
@@ -985,7 +961,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
 
             <button
               onClick={onExploreService}
-              className="btn-outline-dark"
+              className="btn-dark"
             >
               <span>Conocer más →</span>
             </button>
@@ -994,10 +970,10 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
           {/* Service Feature Banner with Bespoke Vector Icon */}
           <div
             style={{
-              backgroundColor: '#F3F2EE',
-              border: '1px solid rgba(20, 22, 25, 0.1)',
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid var(--border-hairline)',
               padding: 'clamp(1.5rem, 4vw, 3rem)',
-              marginBottom: ' clamp(3rem, 7vw, 5rem)'
+              marginBottom: 'clamp(3rem, 7vw, 5rem)'
             }}
           >
             <div
@@ -1016,11 +992,11 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   size={52}
                 />
                 <div>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 600, margin: '0 0 0.5rem', color: '#121316' }}>
-                    Desarrollo Integral Llave en Mano
+                  <h3 className="font-display" style={{ fontSize: '1.35rem', fontWeight: 600, margin: '0 0 0.5rem', color: 'var(--text-dark)' }}>
+                    Arquitectura Integral & Ejecución
                   </h3>
-                  <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#6B6B6B', margin: 0 }}>
-                    {SERVICE_DATA.summary}
+                  <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
+                    {SERVICE_DATA.description}
                   </p>
                 </div>
               </div>
@@ -1029,18 +1005,18 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '1.25rem',
-                  borderLeft: '1px solid rgba(20, 22, 25, 0.08)',
+                  gap: '1.5rem',
+                  borderLeft: '1px solid var(--border-hairline)',
                   paddingLeft: 'clamp(0.5rem, 2vw, 2rem)'
                 }}
               >
                 {SERVICE_DATA.features.map((feat, idx) => (
                   <div key={idx}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#A68B67', letterSpacing: '0.1em' }}>
-                      {feat.tag}
-                    </div>
-                    <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#121316', marginTop: '0.25rem' }}>
+                    <div className="font-display" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-dark)' }}>
                       {feat.title}
+                    </div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.5 }}>
+                      {feat.desc}
                     </div>
                   </div>
                 ))}
@@ -1057,10 +1033,10 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   fontSize: '0.72rem',
                   letterSpacing: '0.15em',
                   textTransform: 'uppercase',
-                  color: '#6B6B6B'
+                  color: 'var(--text-muted)'
                 }}
               >
-                Dossier Espacial · Selección de Referencias
+                Dossier Espacial · Portafolio Seleccionado
               </span>
             </div>
 
@@ -1082,7 +1058,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                       onClick={() => setActiveProjectIdx(idx)}
                       style={{
                         padding: '1.75rem 0',
-                        borderBottom: '1px solid rgba(20, 22, 25, 0.12)',
+                        borderBottom: '1px solid var(--border-hairline)',
                         cursor: 'pointer',
                         transition: 'all 0.25s ease'
                       }}
@@ -1091,10 +1067,10 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                         <h4
                           className="font-display"
                           style={{
-                            fontSize: 'clamp(1.4rem, 2.8vw, 2rem)',
-                            fontWeight: 400,
+                            fontSize: 'clamp(1.3rem, 2.8vw, 1.85rem)',
+                            fontWeight: 600,
                             margin: 0,
-                            color: isActive ? '#121316' : 'rgba(18, 19, 22, 0.55)',
+                            color: isActive ? 'var(--text-dark)' : 'rgba(45, 45, 45, 0.45)',
                             transition: 'color 0.2s ease'
                           }}
                         >
@@ -1104,7 +1080,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                           style={{
                             fontFamily: 'var(--font-mono)',
                             fontSize: '0.75rem',
-                            color: isActive ? '#A68B67' : '#A3A099'
+                            color: isActive ? 'var(--accent)' : 'var(--text-muted)'
                           }}
                         >
                           0{idx + 1}
@@ -1113,7 +1089,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                       <div
                         style={{
                           fontSize: '0.85rem',
-                          color: '#6B6B6B',
+                          color: 'var(--text-muted)',
                           marginTop: '0.35rem',
                           display: 'flex',
                           flexWrap: 'wrap',
@@ -1125,7 +1101,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                         <span>{proj.location}</span>
                       </div>
                       {isActive && (
-                        <p style={{ fontSize: '0.88rem', color: '#121316', marginTop: '0.75rem', lineHeight: 1.5 }}>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-dark)', marginTop: '0.75rem', lineHeight: 1.5 }}>
                           {proj.specs}
                         </p>
                       )}
@@ -1140,8 +1116,8 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   width: '100%',
                   aspectRatio: '16 / 11',
                   overflow: 'hidden',
-                  backgroundColor: '#D9D1C5',
-                  boxShadow: '0 20px 40px -20px rgba(18, 19, 22, 0.15)'
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-hairline)'
                 }}
               >
                 <img
@@ -1161,14 +1137,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
       </section>
 
       {/* -----------------------------------------------------------------------
-          SECTION 5: METODOLOGÍA & FASES DE OBRA (Warm Stone #F3F2EE, Linear Flow)
+          SECTION 5: METODOLOGÍA & FASES DE EJECUCIÓN (Warm Light #F9F9F9)
           ----------------------------------------------------------------------- */}
       <section
         id="proceso"
         style={{
-          backgroundColor: '#F3F2EE',
-          padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3.5rem)',
-          borderBottom: '1px solid rgba(20, 22, 25, 0.08)'
+          backgroundColor: 'var(--bg-primary)',
+          padding: 'clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 3.5rem)',
+          borderBottom: '1px solid var(--border-hairline)'
         }}
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -1179,7 +1155,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 fontSize: '0.75rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#A68B67'
+                color: 'var(--accent)'
               }}
             >
               Fases de Ejecución
@@ -1187,14 +1163,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
             <h2
               className="font-display"
               style={{
-                fontSize: 'clamp(1.75rem, 4.5vw, 3.25rem)',
+                fontSize: 'clamp(1.5rem, 5vw, 3rem)',
                 lineHeight: 1.1,
-                fontWeight: 400,
+                fontWeight: 600,
                 margin: '0.5rem 0 0',
-                color: '#121316'
+                color: 'var(--text-dark)'
               }}
             >
-              Proceso estructurado en tres etapas técnicas
+              Proceso estructurado en tres etapas
             </h2>
           </div>
 
@@ -1209,29 +1185,30 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               <div
                 key={idx}
                 style={{
-                  borderTop: '2px solid #121316',
+                  borderTop: '2px solid var(--text-dark)',
                   paddingTop: '1.5rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '1rem'
+                  gap: '0.75rem'
                 }}
               >
                 <div
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '1rem',
-                    fontWeight: 500,
-                    color: '#A68B67'
+                    fontWeight: 600,
+                    color: 'var(--accent)'
                   }}
                 >
-                  {step.step}
+                  {step.index}
                 </div>
                 <h3
+                  className="font-display"
                   style={{
-                    fontSize: '1.25rem',
+                    fontSize: '1.35rem',
                     fontWeight: 600,
                     margin: 0,
-                    color: '#121316'
+                    color: 'var(--text-dark)'
                   }}
                 >
                   {step.title}
@@ -1240,7 +1217,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   style={{
                     fontSize: '0.95rem',
                     lineHeight: 1.6,
-                    color: '#6B6B6B',
+                    color: 'var(--text-muted)',
                     margin: 0
                   }}
                 >
@@ -1253,9 +1230,10 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
           {/* Quick FAQ / Clarification */}
           <div
             style={{
-              marginTop: ' clamp(3.5rem, 6vw, 5rem)',
+              marginTop: 'clamp(3.5rem, 6vw, 5rem)',
               padding: 'clamp(1.5rem, 3vw, 2.5rem)',
-              backgroundColor: '#EBE9E4',
+              backgroundColor: 'var(--bg-secondary)',
+              border: '1px solid var(--border-hairline)',
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'space-between',
@@ -1264,14 +1242,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
             }}
           >
             <div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.12em', color: '#A68B67', textTransform: 'uppercase' }}>
-                Alcance Geográfico
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.12em', color: 'var(--accent)', textTransform: 'uppercase' }}>
+                Zona Operativa
               </div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#121316', marginTop: '0.25rem' }}>
-                ¿En qué zonas de República Dominicana trabajan?
+              <div className="font-display" style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-dark)', marginTop: '0.25rem' }}>
+                ¿En qué zonas trabajan?
               </div>
-              <p style={{ fontSize: '0.92rem', color: '#6B6B6B', margin: '0.35rem 0 0' }}>
-                Operamos a nivel nacional, adaptándonos a los requerimientos y condiciones de cada proyecto en el país.
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: '0.35rem 0 0' }}>
+                Actualmente operamos principalmente en Santo Domingo, República Dominicana.
               </p>
             </div>
 
@@ -1279,23 +1257,23 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               href={CLIENT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-monolith"
+              className="btn-dark"
             >
-              <span>Consultar viabilidad de proyecto</span>
-              <ArrowUpRight size={14} />
+              <span>Consultar en Instagram</span>
+              <ArrowUpRight size={15} />
             </a>
           </div>
         </div>
       </section>
 
       {/* -----------------------------------------------------------------------
-          SECTION 6: CIERRE MONOLÍTICO & FOOTER (Dark Basalt #121316, Mega Wordmark)
+          SECTION 6: CIERRE MONOLÍTICO & FOOTER (Dark Basalt #1A1A1A, Mega Wordmark)
           ----------------------------------------------------------------------- */}
       <footer
         id="contacto"
         style={{
-          backgroundColor: '#121316',
-          color: '#F3F2EE',
+          backgroundColor: 'var(--bg-dark)',
+          color: 'var(--text-light)',
           padding: 'clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 4vw, 3.5rem) 3rem',
           overflow: 'hidden'
         }}
@@ -1310,7 +1288,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               alignItems: 'center',
               gap: '2rem',
               paddingBottom: 'clamp(3rem, 6vw, 5rem)',
-              borderBottom: '1px solid rgba(243, 242, 238, 0.12)'
+              borderBottom: '1px solid rgba(255, 255, 255, 0.12)'
             }}
           >
             <div style={{ maxWidth: '640px' }}>
@@ -1320,7 +1298,7 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                   fontSize: '0.75rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: '#C5B398'
+                  color: 'var(--gold-accent)'
                 }}
               >
                 Inicie su Proyecto
@@ -1328,14 +1306,14 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               <h2
                 className="font-display"
                 style={{
-                  fontSize: 'clamp(2rem, 5.5vw, 3.8rem)',
+                  fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
                   lineHeight: 1.1,
-                  fontWeight: 400,
+                  fontWeight: 600,
                   margin: '0.5rem 0 0',
-                  color: '#F3F2EE'
+                  color: 'var(--text-light)'
                 }}
               >
-                Construyamos con rigor y visión arquitectónica
+                Transformamos espacios con calidad garantizada
               </h2>
             </div>
 
@@ -1343,72 +1321,51 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
               href={CLIENT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-monolith"
-              style={{
-                backgroundColor: '#A68B67',
-                borderColor: '#A68B67',
-                padding: '1.1rem 2.25rem',
-                fontSize: '0.88rem'
-              }}
+              className="btn-primary"
+              style={{ padding: '1rem 2.25rem' }}
             >
-              <span>Contactar en Instagram oficial</span>
+              <span>Contactar en Instagram</span>
               <ArrowUpRight size={16} />
             </a>
           </div>
 
-          {/* Mega Wordmark AVILA spanning edge to edge */}
-          <div
-            style={{
-              padding: 'clamp(2rem, 5vw, 4rem) 0',
-              textAlign: 'center',
-              borderBottom: '1px solid rgba(243, 242, 238, 0.08)'
-            }}
-          >
-            <div
-              className="font-display"
-              style={{
-                fontSize: 'clamp(4rem, 16vw, 13rem)',
-                lineHeight: 0.9,
-                fontWeight: 400,
-                letterSpacing: '0.04em',
-                color: 'rgba(243, 242, 238, 0.15)',
-                userSelect: 'none'
-              }}
-            >
-              {CLIENT_INFO.shortName}
-            </div>
-          </div>
-
-          {/* Minimalist 4-Column Technical Footer */}
+          {/* Dossier Contact Grid */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem',
-              paddingTop: '2.5rem',
-              fontSize: '0.85rem',
-              color: '#A3A099'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '2.5rem',
+              padding: 'clamp(2.5rem, 5vw, 4rem) 0',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+              fontSize: '0.9rem'
             }}
           >
             <div>
-              <div style={{ color: '#F3F2EE', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                {CLIENT_INFO.name}
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--gold-accent)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                Especialidad
               </div>
-              <div>{CLIENT_INFO.specialty}</div>
-              <div>{CLIENT_INFO.location}</div>
+              <div style={{ color: 'var(--text-light)', marginTop: '0.5rem', fontWeight: 500 }}>
+                {CLIENT_INFO.specialty}
+              </div>
+              <div style={{ color: 'var(--text-light-muted)', fontSize: '0.82rem', marginTop: '0.25rem' }}>
+                Viviendas funcionales y diseño moderno
+              </div>
             </div>
 
             <div>
-              <div style={{ color: '#F3F2EE', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                Disciplina
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--gold-accent)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                Ubicación
               </div>
-              <div>Diseño Arquitectónico</div>
-              <div>Gestión & Supervisión de Obra</div>
-              <div>Ejecución Constructiva</div>
+              <div style={{ color: 'var(--text-light)', marginTop: '0.5rem', fontWeight: 500 }}>
+                {CLIENT_INFO.location}
+              </div>
+              <div style={{ color: 'var(--text-light-muted)', fontSize: '0.82rem', marginTop: '0.25rem' }}>
+                {CLIENT_INFO.coordinates}
+              </div>
             </div>
 
             <div>
-              <div style={{ color: '#F3F2EE', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--gold-accent)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
                 Canal Oficial
               </div>
               <a
@@ -1416,28 +1373,63 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  color: '#C5B398',
+                  color: 'var(--text-light)',
+                  marginTop: '0.5rem',
+                  fontWeight: 500,
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.35rem'
                 }}
               >
                 <span>{CLIENT_INFO.instagramHandle}</span>
-                <ArrowUpRight size={13} />
+                <ArrowUpRight size={14} />
               </a>
-              <div style={{ marginTop: '0.25rem', fontSize: '0.78rem' }}>Atención directa a proyectos</div>
+              <div style={{ color: 'var(--text-light-muted)', fontSize: '0.82rem', marginTop: '0.25rem' }}>
+                Consultas y coordinación técnica
+              </div>
+            </div>
+          </div>
+
+          {/* Mega Wordmark Monolith */}
+          <div
+            style={{
+              paddingTop: 'clamp(2rem, 5vw, 4rem)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem'
+            }}
+          >
+            <div
+              className="font-display"
+              style={{
+                fontSize: 'clamp(2.5rem, 9.5vw, 9.5rem)',
+                fontWeight: 700,
+                lineHeight: 0.9,
+                letterSpacing: '-0.02em',
+                color: 'rgba(255, 255, 255, 0.08)',
+                userSelect: 'none',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden'
+              }}
+            >
+              {CLIENT_INFO.name}
             </div>
 
-            <div>
-              <div style={{ color: '#F3F2EE', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                Plataforma Técnica
-              </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem' }}>
-                COORD: {CLIENT_INFO.coordinates}
-              </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', marginTop: '0.25rem' }}>
-                REPÚBLICA DOMINICANA
-              </div>
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                gap: '1rem',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.72rem',
+                color: 'var(--text-light-muted)',
+                letterSpacing: '0.08em'
+              }}
+            >
+              <div>© {new Date().getFullYear()} {CLIENT_INFO.name}. TODOS LOS DERECHOS RESERVADOS.</div>
+              <div>SANTO DOMINGO · REPÚBLICA DOMINICANA</div>
             </div>
           </div>
         </div>
@@ -1448,13 +1440,13 @@ function HomeView({ onExploreService, activeProjectIdx, setActiveProjectIdx }) {
 
 /**
  * =============================================================================
- * DEDICATED SERVICE VIEW (#/servicios/arquitectura-y-construccion)
+ * DEDICATED SERVICE VIEW (#/servicios/diseno-y-construccion)
  * In-depth architectural breakdown, specifications, and direct contact
  * =============================================================================
  */
 function DedicatedServiceView({ onBack }) {
   return (
-    <div style={{ backgroundColor: '#F3F2EE', minHeight: '100vh', paddingTop: '80px' }}>
+    <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', paddingTop: '80px' }}>
       {/* Top Header / Breadcrumb */}
       <div
         style={{
@@ -1475,9 +1467,9 @@ function DedicatedServiceView({ onBack }) {
             fontFamily: 'var(--font-sans)',
             fontSize: '0.85rem',
             fontWeight: 500,
-            letterSpacing: '0.06em',
+            letterSpacing: '0.04em',
             textTransform: 'uppercase',
-            color: '#121316',
+            color: 'var(--text-dark)',
             cursor: 'pointer'
           }}
         >
@@ -1488,7 +1480,7 @@ function DedicatedServiceView({ onBack }) {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '0.75rem',
-            color: '#A68B67',
+            color: 'var(--accent)',
             letterSpacing: '0.12em',
             textTransform: 'uppercase'
           }}
@@ -1506,7 +1498,7 @@ function DedicatedServiceView({ onBack }) {
         }}
       >
         <div style={{ maxWidth: '980px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
             <BespokeServiceIcon
               title={SERVICE_DATA.title}
               category={SERVICE_DATA.kicker}
@@ -1519,7 +1511,7 @@ function DedicatedServiceView({ onBack }) {
                 fontSize: '0.78rem',
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: '#A68B67'
+                color: 'var(--accent)'
               }}
             >
               {SERVICE_DATA.kicker}
@@ -1529,10 +1521,10 @@ function DedicatedServiceView({ onBack }) {
           <h1
             className="font-display"
             style={{
-              fontSize: 'clamp(2.25rem, 6.5vw, 4.5rem)',
+              fontSize: 'clamp(2rem, 6.5vw, 4.25rem)',
               lineHeight: 1.08,
-              fontWeight: 400,
-              color: '#121316',
+              fontWeight: 600,
+              color: 'var(--text-dark)',
               margin: '0 0 1.5rem'
             }}
           >
@@ -1541,14 +1533,14 @@ function DedicatedServiceView({ onBack }) {
 
           <p
             style={{
-              fontSize: 'clamp(1.05rem, 2vw, 1.35rem)',
+              fontSize: 'clamp(1.05rem, 2vw, 1.3rem)',
               lineHeight: 1.6,
-              color: '#6B6B6B',
+              color: 'var(--text-muted)',
               margin: 0,
               maxWidth: '820px'
             }}
           >
-            {SERVICE_DATA.summary}
+            {SERVICE_DATA.description}
           </p>
         </div>
 
@@ -1560,7 +1552,8 @@ function DedicatedServiceView({ onBack }) {
             aspectRatio: '16 / 8',
             maxHeight: '520px',
             overflow: 'hidden',
-            backgroundColor: '#EBE9E4'
+            backgroundColor: 'var(--bg-secondary)',
+            border: '1px solid var(--border-hairline)'
           }}
         >
           <img
@@ -1578,10 +1571,10 @@ function DedicatedServiceView({ onBack }) {
       {/* Core Breakdown Features */}
       <section
         style={{
-          backgroundColor: '#EBE9E4',
+          backgroundColor: 'var(--bg-secondary)',
           padding: 'clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 3.5rem)',
-          borderTop: '1px solid rgba(20, 22, 25, 0.08)',
-          borderBottom: '1px solid rgba(20, 22, 25, 0.08)'
+          borderTop: '1px solid var(--border-hairline)',
+          borderBottom: '1px solid var(--border-hairline)'
         }}
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -1592,19 +1585,19 @@ function DedicatedServiceView({ onBack }) {
                 fontSize: '0.75rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#A68B67'
+                color: 'var(--accent)'
               }}
             >
-              Alcance Estructurado
+              Pilares de Ejecución
             </span>
             <h2
               className="font-display"
               style={{
-                fontSize: 'clamp(1.75rem, 4.5vw, 3rem)',
+                fontSize: 'clamp(1.5rem, 4.5vw, 3rem)',
                 lineHeight: 1.15,
-                fontWeight: 400,
+                fontWeight: 600,
                 margin: '0.5rem 0 0',
-                color: '#121316'
+                color: 'var(--text-dark)'
               }}
             >
               Tres pilares de rigurosa ejecución técnica
@@ -1622,21 +1615,21 @@ function DedicatedServiceView({ onBack }) {
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#F3F2EE',
-                  border: '1px solid rgba(20, 22, 25, 0.1)',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border-hairline)',
                   padding: 'clamp(1.75rem, 4vw, 2.5rem)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '1.25rem'
+                  gap: '1rem'
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#A68B67', fontWeight: 600 }}>
-                  [{item.tag}]
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 600 }}>
+                  0{idx + 1}
                 </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 600, margin: 0, color: '#121316' }}>
+                <h3 className="font-display" style={{ fontSize: '1.35rem', fontWeight: 600, margin: 0, color: 'var(--text-dark)' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.65, color: '#6B6B6B', margin: 0 }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--text-muted)', margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
@@ -1648,17 +1641,17 @@ function DedicatedServiceView({ onBack }) {
       {/* Technical CAD Schematic on Dedicated View */}
       <section
         style={{
-          backgroundColor: '#121316',
-          color: '#F3F2EE',
+          backgroundColor: 'var(--bg-dark)',
+          color: 'var(--text-light)',
           padding: 'clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 4vw, 3.5rem)'
         }}
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div style={{ maxWidth: '720px', marginBottom: '2.5rem' }}>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#C5B398', letterSpacing: '0.15em' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--gold-accent)', letterSpacing: '0.15em' }}>
               ESQUEMA INTERACTIVO DE DETALLE
             </span>
-            <h2 className="font-display" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', color: '#F3F2EE', margin: '0.5rem 0 0' }}>
+            <h2 className="font-display" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.8rem)', color: 'var(--text-light)', margin: '0.5rem 0 0', fontWeight: 600 }}>
               Planimetría y Modulación Ejecutiva
             </h2>
           </div>
@@ -1676,14 +1669,14 @@ function DedicatedServiceView({ onBack }) {
         }}
       >
         <div style={{ maxWidth: '820px' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#A68B67' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)' }}>
             Ficha Técnica
           </span>
-          <h2 className="font-display" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 3rem)', color: '#121316', margin: '0.5rem 0 2rem' }}>
+          <h2 className="font-display" style={{ fontSize: 'clamp(1.5rem, 4.5vw, 3rem)', color: 'var(--text-dark)', margin: '0.5rem 0 2rem', fontWeight: 600 }}>
             Parámetros y Condiciones de Servicio
           </h2>
 
-          <div style={{ borderTop: '1px solid rgba(20, 22, 25, 0.15)' }}>
+          <div style={{ borderTop: '1px solid var(--border-hairline)' }}>
             {SERVICE_DATA.specifications.map((spec, i) => (
               <div
                 key={i}
@@ -1692,29 +1685,28 @@ function DedicatedServiceView({ onBack }) {
                   gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                   gap: '1rem',
                   padding: '1.25rem 0',
-                  borderBottom: '1px solid rgba(20, 22, 25, 0.08)'
+                  borderBottom: '1px solid var(--border-hairline)'
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                   {spec.label}
                 </div>
-                <div style={{ fontSize: '0.98rem', fontWeight: 500, color: '#121316' }}>
+                <div style={{ fontSize: '0.98rem', fontWeight: 500, color: 'var(--text-dark)' }}>
                   {spec.value}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Action CTA */}
+          {/* Action CTAs */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', marginTop: '3rem' }}>
             <a
               href={CLIENT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-monolith"
-              style={{ backgroundColor: '#A68B67', borderColor: '#A68B67' }}
+              className="btn-primary"
             >
-              <span>Consultar este servicio en Instagram</span>
+              <span>Consultar en Instagram</span>
               <ArrowUpRight size={16} />
             </a>
 
